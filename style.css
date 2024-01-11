@@ -1,0 +1,205 @@
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    /* PRIMARY COLORS */
+    --clr-pink: hsl(322, 100%, 66%);
+    /* NEUTRAL COLORS */
+    --clr-cyan-pale: hsl(193, 100%, 96%);
+    --clr-cyan-dark: hsl(192, 100%, 9%);
+    --clr-grey: hsl(208, 11%, 55%);
+    --clr-white: hsl(0, 100%, 100%);
+
+    /* TYPOGRAPHY */
+    --fs-regular: 1.125rem;
+    --ff-open-sans: 'Open Sans', sans-serif;
+    --ff-poppins: 'Poppins', sans-serif;
+    --poppins-fw-bold: 600;
+    --opensans-fw-bold: 700;
+}
+
+/* COMPONENTS */
+
+.btn {
+    font-weight: var(--opensans-fw-bold);
+    padding: 1em 4em;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px black;
+}
+
+.btn:is(:hover, :focus) {
+    opacity: .75;
+}
+
+
+.btn-primary {
+    background-color: var(--clr-pink);
+    color: var(--clr-cyan-pale);
+}
+
+.btn-secondary {
+    background-color: var(--clr-white);
+}
+
+:is(h1, h2) {
+    font-family: var(--ff-poppins);
+    font-weight: var(--poppins-fw-bold);
+}
+
+:is(.top-section, .middle-section) {
+    text-align: center;
+}
+
+/* UTILITIES */
+
+.flow > * + * {
+    --flow-space: 1em;
+    margin-top: var(--flow-space);
+}
+
+.container > * {
+    --inline-container: 1em;
+    padding-inline: var(--inline-container)
+}
+
+/* GENERAL STYLING */
+
+body {
+    font-family: var(--ff-open-sans);
+    font-size: var(--fs-regular);
+}
+
+.main {
+    background-image: url('images/bg-hero-mobile.svg');
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+/* TOP-SECTION */
+
+.top-section {
+    background-color: var(--clr-cyan-pale);
+    padding-block-start: 1.5rem;
+    padding-block-end: 5rem;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* MIDDLE-SECTION */
+
+.middle-section {
+    padding-block-start: 3rem;
+    padding-block-end: 5rem;
+}
+
+.benefits {
+    border: 1px solid var(--clr-grey);
+    border-radius: 10px;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--clr-cyan-dark);
+    color: var(--clr-cyan-pale);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contact-info > * {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.footer-menu a:is(:hover, :focus) {
+    border-bottom: 1px solid var(--clr-white);
+    transition: .5s;
+}
+
+.social-media svg {
+    fill: var(--clr-cyan-pale);
+    border: 1px solid var(--clr-cyan-pale);
+    border-radius: 10px;
+}
+
+.social-media svg path:is(:hover, :focus) {
+    fill: var(--clr-pink);
+    transition: .5s;
+    border-color: green;
+}
