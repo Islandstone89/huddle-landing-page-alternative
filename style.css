@@ -90,7 +90,6 @@ textarea:not([rows]) {
     padding: 1em 4em;
     border: none;
     border-radius: 20px;
-    box-shadow: 0 2px 2px black;
 }
 
 .btn:is(:hover, :focus) {
@@ -101,10 +100,12 @@ textarea:not([rows]) {
 .btn-primary {
     background-color: var(--clr-pink);
     color: var(--clr-cyan-pale);
+    box-shadow: 0 2px 2px var(--clr-grey);
 }
 
 .btn-secondary {
     background-color: var(--clr-white);
+    box-shadow: 0 2px 2px var(--clr-grey);
 }
 
 :is(h1, h2) {
@@ -112,9 +113,6 @@ textarea:not([rows]) {
     font-weight: var(--poppins-fw-bold);
 }
 
-:is(.top-section, .middle-section) {
-    text-align: center;
-}
 
 /* UTILITIES */
 
@@ -133,13 +131,16 @@ textarea:not([rows]) {
 body {
     font-family: var(--ff-open-sans);
     font-size: var(--fs-regular);
+    text-align: center;
 }
 
 .main {
     background-image: url('images/bg-hero-mobile.svg');
     background-position: top;
     background-repeat: no-repeat;
+    padding-block-end: 5rem;
 }
+
 
 /* TOP-SECTION */
 
@@ -156,6 +157,10 @@ body {
     gap: 2rem;
 }
 
+.top-content {
+    --flow-space: 3em;
+}
+
 /* MIDDLE-SECTION */
 
 .middle-section {
@@ -164,8 +169,34 @@ body {
 }
 
 .benefits {
-    border: 1px solid var(--clr-grey);
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr;
+    --flow-space: 4em;
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px black;
+    padding: 3rem 2rem;
+}
+
+
+
+/* CTA-BOX */
+
+.cta-box-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-box {
+    /* outline: 2px solid lightsalmon; */
+    /* margin-bottom: -100px; */
+    background-color: white;
+    box-shadow: 3px 3px 5px 2px black;
+    transform: translateY(100%);
     border-radius: 10px;
+    padding: 2rem 4rem;
 }
 
 /* FOOTER */
@@ -173,6 +204,12 @@ body {
 .footer {
     background-color: var(--clr-cyan-dark);
     color: var(--clr-cyan-pale);
+    padding-block: 16rem;
+    text-align: left;
+}
+
+.footer-logo svg path{
+    fill: white;
 }
 
 .contact-info {
@@ -184,8 +221,13 @@ body {
 .contact-info > * {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
 }
+
+.location-text {
+    max-width: min(45ch, 100%);
+}
+
 
 .footer-menu a:is(:hover, :focus) {
     border-bottom: 1px solid var(--clr-white);
@@ -203,3 +245,28 @@ body {
     transition: .5s;
     border-color: green;
 }
+
+@media(min-width: 50rem) {
+    .container > * {
+        --inline-container: 5em;
+    }
+    .benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .benefits:nth-child(2) {
+        grid-template-areas: "image text";
+    }
+    .benefits:nth-child(1),
+    .benefits.benefits:nth-child(3) {
+        grid-template-areas: "text image";
+    }
+    .benefits:nth-child(1) .benefits-image,
+    .benefits:nth-child(2) .benefits-image,
+    .benefits:nth-child(3) .benefits-image {
+        grid-area: image;
+    }
+    .benefits-text {
+        margin-block: auto;
+    }
+}
+
