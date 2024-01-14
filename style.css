@@ -166,6 +166,10 @@ body {
     --flow-space: 5em;
 }
 
+.top-content-text .btn {
+    --flow-space: 2em;
+}
+
 .top-content-image {
     --flow-space: 3em;
 }
