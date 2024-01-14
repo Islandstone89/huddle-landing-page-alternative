@@ -211,7 +211,8 @@ body {
 .footer {
     background-color: var(--clr-cyan-dark);
     color: var(--clr-cyan-pale);
-    padding-block: 16rem;
+    padding-block-start: 16rem;
+    padding-block-end: 5rem;
     text-align: left;
 }
 
