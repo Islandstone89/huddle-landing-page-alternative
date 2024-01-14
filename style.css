@@ -27,14 +27,10 @@ ol {
   padding: 0;
 }
 
-/* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
-  text-wrap: balance;
-}
 
-p {
-    text-wrap: pretty;
+h1, h2,
+h3, h4, p {
+  text-wrap: balance;
 }
 
 a {
