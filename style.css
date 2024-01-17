@@ -134,10 +134,15 @@ body {
 }
 
 .main {
-    background-image: url('images/bg-hero-mobile.svg');
-    background-position: top;
-    background-repeat: no-repeat;
     padding-block-end: 5rem;
+    position: relative;
+}
+
+
+picture {
+    position: absolute;
+    top: 1rem;
+    left: 5rem;
 }
 
 
