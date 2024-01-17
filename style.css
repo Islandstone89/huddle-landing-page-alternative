@@ -104,7 +104,7 @@ textarea:not([rows]) {
 .btn-secondary {
     background-color: var(--clr-white);
     box-shadow: 0 2px 2px var(--clr-grey);
-    padding: 1rem;
+    padding: .5em 2em;
 }
 
 :is(h1, h2) {
@@ -158,6 +158,12 @@ body {
 }
 
 
+
+.top-bar-image svg {
+    display: block;
+}
+
+
 .top-content {
     --flow-space: 5em;
     display: flex;
@@ -179,7 +185,7 @@ body {
 
 .middle-section {
     padding-block-start: 8rem;
-    padding-block-end: 5rem;
+    padding-block-end: 2rem;
 }
 
 .benefits {
@@ -205,10 +211,14 @@ body {
 
 .cta-box {
     background-color: white;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .9);
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .1);
     transform: translateY(100%);
     border-radius: 10px;
     padding: 2rem;
+}
+
+.cta-box h2 {
+    font-size: 1rem;
 }
 
 /* FOOTER */
@@ -271,7 +281,7 @@ body {
 .social-media svg {
     fill: var(--clr-cyan-pale);
     border: 1px solid var(--clr-cyan-pale);
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .social-media svg:is(:hover, :focus) {
@@ -284,6 +294,7 @@ body {
     display: flex;
     gap: 1rem;
 }
+
 
 .copyright {
     font-size: 1rem;
