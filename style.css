@@ -136,6 +136,8 @@ body {
 .main {
     padding-block-end: 5rem;
     position: relative;
+    max-width: 90rem;
+    margin-inline: auto;
 }
 
 
@@ -161,8 +163,6 @@ picture {
     align-items: center;
     gap: 1rem;
 }
-
-
 
 .top-bar-image svg {
     display: block;
@@ -279,27 +279,28 @@ picture {
     align-items: center;
 }
 
-.social-media a {
-    padding: 1rem;
-}
-
-.social-media svg {
-    fill: var(--clr-cyan-pale);
-    border: 1px solid var(--clr-cyan-pale);
-    border-radius: 50%;
-}
-
-.social-media svg:is(:hover, :focus) {
-    fill: var(--clr-pink);
-    transition: .5s;
-    border-color: var(--clr-pink);
-}
-
 .social-media-icons {
     display: flex;
     gap: 1rem;
 }
 
+.social-media a {
+    padding: .75rem;
+    fill: var(--clr-cyan-pale);
+    border: 1px solid var(--clr-cyan-pale);
+    border-radius: 50%;
+}
+
+
+.social-media a:is(:hover, :focus) {
+    fill: var(--clr-pink);
+    transition: .5s;
+    border-color: var(--clr-pink);
+}
+
+.social-media svg {
+    display: block;
+}
 
 .copyright {
     font-size: 1rem;
